@@ -122,6 +122,10 @@
     @apply bg-background text-foreground;
   }
 }
+.pageclip-form__success,
+.pageclip-form__error {
+  display: none !important;
+}
 
 @layer utilities {
   /* Custom animated background for Arena event page */
