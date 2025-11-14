@@ -256,6 +256,7 @@ export default function Form() {
                     <input
                       type="radio"
                       name="hasTeam"
+                      value="false"
                       checked={!formData.hasTeam}
                       onChange={() => setFormData((prev) => ({ ...prev, hasTeam: false }))}
                       className="w-5 h-5"
@@ -271,6 +272,7 @@ export default function Form() {
                     <input
                       type="radio"
                       name="hasTeam"
+                      value="true"
                       checked={formData.hasTeam}
                       onChange={() => setFormData((prev) => ({ ...prev, hasTeam: true }))}
                       className="w-5 h-5"
@@ -278,6 +280,8 @@ export default function Form() {
                     <span className="ml-3 font-semibold text-slate-300">I have a Team</span>
                   </label>
                 </div>
+                {/* Ensures the 'hasTeam' field is always submitted */}
+                <input type="hidden" name="hasTeam" value={formData.hasTeam.toString()} />
                 {formData.hasTeam && (
                   <div className="bg-slate-700/30 border border-cyan-500/20 rounded-lg p-4 sm:p-6 space-y-4">
                     <div>
@@ -333,6 +337,7 @@ export default function Form() {
                     <input
                       type="radio"
                       name="needsTransportation"
+                      value="false"
                       checked={!formData.needsTransportation}
                       onChange={() => setFormData((prev) => ({ ...prev, needsTransportation: false }))}
                       className="w-5 h-5"
@@ -348,6 +353,7 @@ export default function Form() {
                     <input
                       type="radio"
                       name="needsTransportation"
+                      value="true"
                       checked={formData.needsTransportation}
                       onChange={() => setFormData((prev) => ({ ...prev, needsTransportation: true }))}
                       className="w-5 h-5"
@@ -355,6 +361,8 @@ export default function Form() {
                     <span className="ml-3 font-semibold text-slate-300">Yes</span>
                   </label>
                 </div>
+                {/* Ensures the 'needsTransportation' field is always submitted */}
+                <input type="hidden" name="needsTransportation" value={formData.needsTransportation.toString()} />
                 {formData.needsTransportation && (
                   <div className="bg-slate-700/30 border border-cyan-500/20 rounded-lg p-4 sm:p-6">
                     <label className="block text-sm font-semibold text-slate-300 mb-2">Address *</label>
